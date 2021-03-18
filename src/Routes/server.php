@@ -13,5 +13,7 @@ Route::middleware(config('laravel-sso.routeGroupMiddleware'))
         Route::post('logout', [Nddcoder\LaravelSSO\Controllers\ServerController::class, 'logout']);
         Route::middleware(config('laravel-sso.routeAttachMiddleware'))
             ->get('attach', [Nddcoder\LaravelSSO\Controllers\ServerController::class, 'attach']);
+        Route::middleware(config('laravel-sso.routeAttachMiddleware'))
+            ->post('attach', [Nddcoder\LaravelSSO\Controllers\ServerController::class, 'attach']);
         Route::get('userInfo', [Nddcoder\LaravelSSO\Controllers\ServerController::class, 'userInfo']);
     });
